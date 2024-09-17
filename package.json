@@ -15,7 +15,7 @@
   "keywords": [],
   "author": "",
   "license": "WORKETYAMO",
-  "description": "",
+  "description": "`@worketyamo/ts-starter` est un projet de démarrage TypeScript conçu pour simplifier le développement d'applications Express.js. Ce kit de démarrage inclut les configurations et dépendances essentielles pour vous permettre de démarrer rapidement, tout en appliquant des normes de qualité et de cohérence du code avec ESLint et Prettier.",
   "devDependencies": {
     "@eslint/js": "^9.5.0",
     "@types/compression": "^1.7.5",
@@ -34,13 +34,16 @@
     "typescript-eslint": "^7.13.1"
   },
   "dependencies": {
+    "@prisma/client": "^5.19.1",
     "@types/morgan": "^1.9.9",
+    "body-parser": "^1.20.3",
     "compression": "^1.7.4",
     "dotenv": "^16.4.5",
     "env-var": "^7.5.0",
-    "express": "^4.19.2",
+    "express": "^4.21.0",
     "express-rate-limit": "^7.3.1",
     "morgan": "^1.10.0",
+    "prisma": "^5.19.1",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
   }
