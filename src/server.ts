@@ -20,7 +20,13 @@ import morgan from 'morgan';
 import { ONE_HUNDRED, SIXTY } from './core/constants';
 import routerPost from './routes/routespost';
 import bodyParser from 'body-parser';
-
+import cors from 'cors'
+const corsOptions = {
+	origin: 'http://localhost:5173',
+	methods: 'GET,POST,PUT,DELETE',
+	allowedHeaders: 'Content-Type,Authorization',
+	credentials: true,
+  };
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -32,7 +38,7 @@ app.use(
 		message: 'Trop de Requete à partir de cette adresse IP '
 	})
 );
-
+app.use(cors(corsOptions));
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use('/post', routerPost);
