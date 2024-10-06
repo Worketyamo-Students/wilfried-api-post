@@ -17,9 +17,9 @@ const prisma = new PrismaClient();
 const controlleursPost = {
  createPost : async (req:Request,res: Response) => {
     try {
-        const {title,content} = req.body;
+        const {author,title,content} = req.body;
         const post = await prisma.post.create({
-            data: {title,content}
+            data: {author,title,content}
         })
         res.status(HttpCode.CREATED).send(post)
     } catch (error) {
@@ -38,14 +38,16 @@ const controlleursPost = {
  updatePost: async (req:Request,res:Response) => {
     try {
         const {id} =req.params;
-        const {title,content}= req.body
+        const {author,title,content}= req.body
         const modify = await prisma.post.update({
             where:{
                 id:parseInt(id)
             },
             data:{
+                author,
                 title,
-                content
+                content,
+            
             }
         })
         if(!modify){
